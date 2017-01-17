@@ -1,0 +1,26 @@
+{
+  "name": "serendipity-bot",
+  "version": "1.0.0",
+  "description": "Randomly pair people for 1-1 meetings",
+  "main": "./lib/index.js",
+  "bin": "./lib/index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint lib test --quiet"
+  },
+  "author": "Peter Hayes",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "eslint-config-classdojo": "^1.2.3",
+    "expect": "^1.20.2",
+    "lodash": "^4.17.4",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "@slack/client": "^3.8.1",
+    "commander": "^2.9.0",
+    "js-combinatorics": "^0.5.2",
+    "random-js": "^1.0.8"
+  }
+}
