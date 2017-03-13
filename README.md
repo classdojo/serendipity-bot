@@ -5,7 +5,7 @@ Serendipity Bot randomly pairs people for 1-1 meetings. This is generally pleasa
 
 ## How do I use it?
 ### Install it
-`npm i --g serendipity-bot`
+`npm i -g serendipity-bot`
 
 ### Make a list of names
 Save something like this to a file
@@ -23,11 +23,11 @@ Mick
 
 ### Run the script
 ####To log today's pairing:
-`serendipity-bot [list_of_names]`
+`serendipity-bot [list_of_names_file]`
 
 ####To post to Slack:
-You'll first need to get a token for your Slack account.  
-`serendipity-bot [list_of_names] --token [slack token] --channel [slack channel]`
+You'll first need to get a token for your Slack account.
+`serendipity-bot [list_of_names_file] --token [slack token] --channel [slack channel]`
 
 ### To learn more
 `serendipity-bot --help`
