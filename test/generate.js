@@ -23,7 +23,7 @@ describe("generate", () => {
   function cleanup () {
     try {
       fs.unlinkSync(inputPath);
-      const files = fs.readdirSync(path.join(__dirname, ".."))
+      fs.readdirSync(path.join(__dirname, ".."))
         .filter((filename) => /^\.index-/.test(filename))
         .forEach((filename) => fs.unlinkSync(path.join(__dirname, "..", filename)));
     } catch (__) {}
@@ -61,6 +61,11 @@ describe("generate", () => {
     expect(result).toBe("Today's one-on-one meeting is between Mary and George!");
   });
 
+  it("Can accept a custom message", () => {
+    const result = generate(inputPath, {message: "Hello {{1}} and {{2}}"});
+    expect(result).toBe("Hello Mary and George");
+  });
+
   it("Errors if no input path is given", () => {
     expect(() => generate(null))
       .toThrow("Must provide an input file path as the first argument. This file should contain a newline-delimited list of names.");
@@ -76,6 +81,11 @@ describe("generate", () => {
     fs.writeFileSync(inputPath, badInput.join("\n"));
     expect(() => generate(inputPath))
       .toThrow(`Input file must contain at least three names. Instead received: ${badInput.join(", ")}`);
+  });
+
+  it("Errors if custom message does not contain placeholder strings", () => {
+    expect(() => generate(inputPath, {message: "Hello {1} and {2}"}))
+      .toThrow("Custom message must contain the placeholder strings {{1}} and {{2}}");
   });
 
 });

@@ -29,7 +29,7 @@ Mick
 You'll first need to get a token for your Slack account.
 `serendipity-bot [list_of_names_file] --token [slack token] --channel [slack channel]`
 
-### To learn more
+### To see more options
 `serendipity-bot --help`
 
 ## What then?
