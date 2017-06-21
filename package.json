@@ -1,6 +1,6 @@
 {
   "name": "serendipity-bot",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Randomly pair people for 1-1 meetings",
   "main": "./lib/index.js",
   "bin": "./lib/index.js",
